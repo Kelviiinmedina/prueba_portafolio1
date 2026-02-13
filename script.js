@@ -45,10 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Then slide up after 2s (adjusted for fade time)
             setTimeout(() => {
                 intro.classList.add('slide-up');
-
-                // Remove intro-active (black bg) exactly when slide starts
-                // so the light background starts transitioning in as the intro slides away
                 document.body.classList.remove('intro-active');
+
+                // Completely hide intro after transition to avoid any "line" or residual gap
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                }, 1200);
             }, 2200);
         }
     } else {
@@ -118,9 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.style.top = `${finalTop}px`;
 
                 // Toggle docked state:
-                // If a header with a higher index has already docked (reached its slot),
-                // then this one (j) must be solid. Otherwise, stay transparent.
-                if (j < lastDockedIndex) {
+                // If a header has reached its top slot (or someone behind it has), make it solid
+                if (j <= lastDockedIndex || finalTop <= slotTop + 1) {
                     header.classList.add('docked');
                 } else {
                     header.classList.remove('docked');
