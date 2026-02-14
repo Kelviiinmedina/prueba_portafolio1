@@ -410,7 +410,8 @@ body.transition-gray-grad {
     z-index: 5;
 }
 
-.project-media-content img {
+.project-media-content img,
+.project-media-content video {
     max-width: 50%;
     max-height: 70%;
     object-fit: contain;
@@ -444,7 +445,8 @@ body.transition-gray-grad {
         /* Prevent logo zooming in splash */
     }
 
-    .project-media-content img {
+    .project-media-content img,
+    .project-media-content video {
         max-width: 92%;
     }
 

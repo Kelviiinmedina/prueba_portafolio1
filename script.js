@@ -139,30 +139,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateRollingHeaders);
     updateRollingHeaders();
 
-    // Smooth reveal for images
+    // Smooth reveal for images and videos
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            const img = entry.target.querySelector('img');
+            const media = entry.target.querySelector('img, video');
             if (entry.isIntersecting) {
-                if (img) {
-                    img.style.opacity = '1';
-                    img.style.transform = 'scale(1)';
+                if (media) {
+                    media.style.opacity = '1';
+                    media.style.transform = 'scale(1)';
                 }
             } else {
-                if (img) {
-                    img.style.opacity = '0';
-                    img.style.transform = 'scale(1.05)';
+                if (media) {
+                    media.style.opacity = '0';
+                    media.style.transform = 'scale(1.05)';
                 }
             }
         });
     }, { threshold: 0.1 });
 
     rows.forEach(row => {
-        const img = row.querySelector('img');
-        if (img) {
-            img.style.opacity = '0';
-            img.style.transform = 'scale(1.05)';
-            img.style.transition = 'all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)';
+        const media = row.querySelector('img, video');
+        if (media) {
+            media.style.opacity = '0';
+            media.style.transform = 'scale(1.05)';
+            media.style.transition = 'all 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)';
         }
         observer.observe(row);
     });
