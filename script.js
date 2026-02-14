@@ -125,8 +125,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Toggle docked state:
                 // Make it solid as soon as it reaches its slot
-                // Using a slightly larger tolerance (3px) to ensure it triggers correctly on all screens
-                if (finalTop <= slotTop + 3) {
+                // Increased tolerance to 5px for better reliability on all DPI settings
+                if (finalTop <= slotTop + 5) {
                     header.classList.add('docked');
                 } else {
                     header.classList.remove('docked');

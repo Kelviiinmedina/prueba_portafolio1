@@ -276,8 +276,10 @@ body.transition-gray-grad {
 }
 
 .project-header.docked {
-    background: var(--bg-color);
+    background: #EAEAEA !important;
+    /* Defined grey fill */
     border-top: var(--line-weight) solid #222222;
+    opacity: 1 !important;
 }
 
 .header-cols {
