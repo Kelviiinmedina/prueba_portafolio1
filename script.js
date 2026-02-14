@@ -123,8 +123,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 header.style.top = `${finalTop}px`;
 
                 // Toggle docked state:
-                // Only make it solid when it actually reaches its top slot
-                if (finalTop <= slotTop + 1) {
+                // Make it solid as soon as it reaches its slot
+                // Using a slightly larger tolerance (3px) to ensure it triggers correctly on all screens
+                if (finalTop <= slotTop + 3) {
                     header.classList.add('docked');
                 } else {
                     header.classList.remove('docked');
