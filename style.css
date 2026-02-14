@@ -21,11 +21,8 @@
 }
 
 html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    /* Prevent html from having its own scrollbar */
-    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -33,20 +30,19 @@ body {
     color: var(--text-color);
     font-family: var(--font-mono);
     transition: opacity 0.8s ease, background-color 0.8s ease;
-    overflow-x: hidden;
-    overflow-y: auto;
-    /* Only body scrolls */
     width: 100%;
     min-height: 100vh;
     position: relative;
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Global overflow lock on body/html only */
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     max-width: 100vw;
-    scroll-snap-type: none !important;
 }
 
 body.intro-active {
