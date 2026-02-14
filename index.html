@@ -198,14 +198,14 @@
     </main>
 
 
-    <!-- SVG Pixelation Filter -->
+    <!-- SVG Pixelation Filter (Triple Intensity) -->
     <svg style="visibility: hidden; position: absolute;" width="0" height="0">
         <filter id="pixelate" x="0" y="0">
-            <feFlood x="4" y="4" height="2" width="2" />
-            <feComposite width="10" height="10" />
+            <feFlood x="10" y="10" height="5" width="5" />
+            <feComposite width="30" height="30" />
             <feTile result="a" />
             <feComposite in="SourceGraphic" in2="a" operator="in" />
-            <feMorphology operator="dilate" radius="5" />
+            <feMorphology operator="dilate" radius="15" />
         </filter>
     </svg>
 

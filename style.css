@@ -39,6 +39,7 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    scroll-snap-type: y mandatory;
 }
 
 body.intro-active {
@@ -398,6 +399,8 @@ body.transition-gray-grad {
     width: 100%;
     position: relative;
     background: transparent;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .project-media-content {
