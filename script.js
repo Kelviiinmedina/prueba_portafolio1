@@ -195,6 +195,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Marquee click to CV
+    const marquee = document.querySelector('.marquee-strip');
+    if (marquee) {
+        marquee.style.cursor = 'pointer';
+        marquee.addEventListener('click', () => {
+            navigateTo('cv.html', 'transitioning');
+        });
+    }
+
     // Bidirectional Navigation Logic (Index <-> CV)
     let isTransitioning = false;
     const isCVPage = window.location.pathname.toLowerCase().includes('cv.html');
